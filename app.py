@@ -6,9 +6,18 @@ import pickle
 import re
 import pandas as pd
 import numpy as np
-
+from pymongo import MongoClient
 # Initialize your app and load your pickled models.
 #================================================
+client = MongoClient()
+db = client.tweets
+coll = db.thursdaytest
+
+def get_random_tweet():
+    rand_int = np.random.randint(0,coll.count())
+    text = db.find().limit(-1).skip(rand_int).mext()['text']
+    return text
+
 app = Flask(__name__)
 
 def return_tweet():
