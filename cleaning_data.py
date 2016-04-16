@@ -6,7 +6,6 @@ def get_json_df(datafile):
     ''''fix trailing data...?'''
     with open(datafile, 'rb') as f:
         data = f.readlines()
-
     data = map(lambda x: x.rstrip(), data)
     data_json_str = "[" + ','.join(data) + "]"
     data_df = pd.read_json(data_json_str)
@@ -32,6 +31,7 @@ def get_english_tweets(tweet_dataframe):
 if __name__ == '__main__':
     df = get_json_df('test_tweets.json')
     df = get_english_tweets(df)
+    df['text'] = df.text.apply(filter_tweets)
     df2 = df[['id','user','text']]
 
     '''make data set smaller so we can pass
