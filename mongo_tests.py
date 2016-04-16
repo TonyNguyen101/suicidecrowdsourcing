@@ -6,15 +6,9 @@ from pymongo import MongoClient
 
 client = MongoClient()
 
-# db = client.tweets
-# coll = db.thursdaytest
-# coll_new = db.tweets_answered
-
-db=client.twitter
-coll = db.curalate
-coll_new = db.curalate2
-
-
+db = client.tweets
+coll = db.thursdaytest
+coll_new = db.tweets_answered
 
 
 df_ny.features[i]['properties']['name']
@@ -22,7 +16,6 @@ test_string =  'New York County, NY'
 
 def remove_ny(stirng):
     return stirng[:-11]
-
 
 def get_random_tweet():
     rand_int = np.random.randint(0,coll.count())
@@ -34,7 +27,6 @@ def get_random_tweet():
         content['answer'] = 0
     coll_new.insert(content)
     return text
-
 
 def get_content_from_new_db():
     return coll_new.find_one()['text']

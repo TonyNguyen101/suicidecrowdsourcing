@@ -1,6 +1,6 @@
 import pandas as pd
 import datetime
-
+import re
 
 def get_json_df(datafile):
     ''''fix trailing data...?'''
@@ -15,13 +15,26 @@ def get_json_df(datafile):
 
 def filter_tweets(string):
     '''remove any mentions'''
-    return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",string).split())
+    new_string = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",string).split())
+    if new_string.startswith('RT') == True:
+        return new_string[3::]
+    else:
+        return new_string
+
+def get_english_tweets(tweet_dataframe):
+    langs = []
+    tweet_dataframe['language'] = 0
+    for i in xrange(len(tweet_dataframe)):
+        langs.append(tweet_dataframe['user'][i]['lang'])
+    tweet_dataframe['language'] = langs
+    return tweet_dataframe[tweet_dataframe['language']=='en']
 
 if __name__ == '__main__':
-    df = get_json_df('suicide_tweets.json')
+    df = get_json_df('test_tweets.json')
+    df = get_english_tweets(df)
     df2 = df[['id','user','text']]
 
     '''make data set smaller so we can pass
     through to the FE in case DB's dont work'''
 
-    df2.to_pickle('data/%d_tweets.pkl') %(str(datetime.datetime.now().date))
+    df2.to_pickle('data/test2_tweets.pkl')
