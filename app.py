@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for
 import random
-import requests
 import ipdb
 import pickle
 import re
