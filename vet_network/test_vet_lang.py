@@ -9,16 +9,6 @@ import Twython
 db_cilent = MongoClient()
 
 
-t = Twython(app_key='viFcnMBuuVEEACYk8uHVJFxGl',
-   app_secret='EoDGnIUQ316VbzaMt3nfcvwj4qnhpz8RyWWgyO28LF4HMFbHTu',
-   oauth_token='67738036-SM5J8ZMIqXTYkhLfcnrBphP4Y7QbUITZwZ6IWxsF0',
-   oauth_token_secret='FNaXS2d7JvdY4GLOMXHqWHR7iIMU10GR94GUmafBBClXn')
-
-
-
-geo_enabled = True, 'country_code' = 'US'
-
-t.lookup_status(id=432656548536401920)
 
 
 veteran_buzzwords = ['veteran', 'force', 'specialforces', 'weaponsmaniac'
