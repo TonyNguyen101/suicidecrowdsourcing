@@ -9,6 +9,12 @@ import Twython
 db_cilent = MongoClient()
 
 
+t = Twython(app)
+
+
+geo_enabled = True, 'country_code' = 'US'
+
+t.lookup_status(id=432656548536401920)
 
 
 veteran_buzzwords = ['veteran', 'force', 'specialforces', 'weaponsmaniac'
