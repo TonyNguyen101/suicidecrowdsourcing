@@ -8,7 +8,7 @@ from pymongo import MongoClient
 from cleaning_data import clean_tweet
 
 
-model = pickle.load(open('models/model.pkl','rb'))
+# model = pickle.load(open('models/model.pkl','rb'))
 
 
 client = MongoClient()
@@ -82,7 +82,7 @@ def read_more():
 
     '''this page should have a lot of d3 vis on suicide statistics'''
 
-    return render_template('text_about.html')
+    return render_template('donut.html')
 
 
 if __name__ == '__main__':

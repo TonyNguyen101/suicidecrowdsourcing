@@ -18,7 +18,14 @@
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
+<link rel=stylesheet type=text/css href="{{url_for('static', filename='css/materialize.css') }}">
+
+
+
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
@@ -65,7 +72,7 @@
             <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Twitter Integration</h5>
 
-            <p class="light">WhereWeAre pulls in millions of tweets that could have signs of mental health issues</p>
+            <p class="center">WhereWeAre pulls in millions of tweets that could have signs of mental health issues</p>
           </div>
         </div>
 
@@ -74,7 +81,7 @@
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Crowd Source Filtering</h5>
 
-            <p class="light">WhereWeAre asks visitors to judge whether or not a statement statement could have signs of mental health issues</p>
+            <p class="center">WhereWeAre asks visitors to judge whether or not a statement statement could have signs of mental health issues</p>
           </div>
         </div>
 
@@ -82,8 +89,9 @@
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">Natural Language Processing Model Training and Twitter Bot</h5>
-
-            <p class="light">The crowd source statements are used to teach a natural language processing model to better identify statements of people with mental health issues. The Twitter bot will twit these users a help line number</p>
+            <p class="center">
+              The crowd source statements are used to teach a natural language processing model to better identify statements of people with mental health issues. The Twitter bot will twit these users a help line number</p>
+            </p1>
           </div>
         </div>
       </div>
@@ -101,7 +109,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Team </h5>
-          <p class="grey-text text-lighten-4">WhereWeAre identifies possible veteran suicidal tweets and profiles, uses crowd sourcing to further identify the serious threats to 1. collect quality data to further train a natural language processing model, 2. generate a heat map based on the user geolocation for further analysis, 3 use a twitter bot to follow and respond with an intervention tweet.</p>
+          <p class="grey-text text-lighten-4" text-alight="center">WhereWeAre identifies possible veteran suicidal tweets and profiles, uses crowd sourcing to further identify the serious threats to 1. collect quality data to further train a natural language processing model, 2. generate a heat map based on the user geolocation for further analysis, 3 use a twitter bot to follow and respond with an intervention tweet.</p>
 
         </div>
         <div class="col l3 s12">
