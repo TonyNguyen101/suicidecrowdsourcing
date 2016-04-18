@@ -50,8 +50,6 @@ def send_to_database(tweet_content, param):
 app = Flask(__name__)
 
 
-# Homepage with form on it.
-#================================================
 @app.route('/')
 def index():
     return render_template('read_more.html')
@@ -88,8 +86,6 @@ def display_tweet():
         return render_template('user_answer2.html', content=content)
     elif request.method == 'POST':
         return render_template('user_answer2.html', content=content)
-
-
 
 
 @app.route('/stop',methods=['POST','GET'])

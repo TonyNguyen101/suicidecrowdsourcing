@@ -8,10 +8,7 @@ from pymongo import MongoClient
 from cleaning_data import clean_tweet
 
 
-
-
 model = pickle.load(open('models/model.pkl','rb'))
-
 
 
 client = MongoClient()
