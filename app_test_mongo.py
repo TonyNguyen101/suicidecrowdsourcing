@@ -1,10 +1,15 @@
 from flask import Flask, request, render_template # redirect, url_for, flash
-import ipdb, pickle, re
+import ipdb, re
 import pandas as pd
 import numpy as np
 from cleaning_data import clean_tweet
 from flask.ext.mongokit import MongoKit
 from flask.ext.mongokit import Connection
+from model import Model
+import cPickle as pickle
+
+
+model = pickle.load(open('models/model.pkl','rb'))
 
 con1 = Connection()
 
@@ -15,23 +20,27 @@ con1 = Connection()
 #my local tweets testing on my desktop
 db = con1.twitter
 coll = db.curalate
-coll_new = db.curalate2
-
+coll_new = db.curalate2 #second database that we will be creating
 
 
 
 def get_random_tweet():
     '''gets random tweet from DB and removes'''
-
     rand_int = np.random.randint(0,coll.count())
     content = coll.find().limit(-1).skip(rand_int).next()
     coll.remove({'_id':content['_id']})
     return content
 
+def get_only_neg_tweets():
+    content = get_random_tweet()
+    if model.predict([content['text']])[0] == 1: #only accepts list...
+        return content
+    else:
+        pass
+
+
 def send_to_database(tweet_content, param):
-
     '''add user input to tweet content and add user info'''
-
     if param == 'Yes':
         coll_new.insert({'item': tweet_content, 'user_ans': 1 })
     else:
@@ -57,6 +66,7 @@ def next():
             return render_template('user_answer2.html', content=content)
         if request.method =='GET':
             return str(0)
+
 
 @app.route('/display_tweet/', methods=['POST','GET'])
 def display_tweet():
@@ -84,16 +94,12 @@ def display_tweet():
 
 @app.route('/stop',methods=['POST','GET'])
 def stop():
-
     '''thanks user and gives them option to read more'''
-
     return render_template('stop.html')
 
 @app.route('/read_more',methods=['POST','GET'])
 def read_more():
-
     '''this page should have a lot of d3 vis on suicide statistics'''
-
     return render_template('text_about.html')
 
 

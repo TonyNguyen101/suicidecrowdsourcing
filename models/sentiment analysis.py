@@ -4,7 +4,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cross_validation import train_test_split
-from sklearn.metrics import f1_score, accuracy_score, precision_score,     recall_score
+from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score
 import pandas as pd
 import numpy as np
 
@@ -24,7 +24,7 @@ def run_model(Model, X_train, X_test, y_train, y_test):
     m = Model()
     m.fit(X_train, y_train)
     y_predict = m.predict(X_test)
-    return accuracy_score(y_test, y_predict), f1_score(y_test, y_predict), precision_score(y_test, y_predict), recall_score(y_test, y_predict)     
+    return accuracy_score(y_test, y_predict), f1_score(y_test, y_predict), precision_score(y_test, y_predict), recall_score(y_test, y_predict)
 
 def compare_models(tweets, labels, models):
     tweets_train, tweets_test, y_train, y_test = train_test_split(tweets, labels)
@@ -53,4 +53,3 @@ for i, count in enumerate(np.bincount(labels)):
 models = [LogisticRegression, KNeighborsClassifier, MultinomialNB,
           RandomForestClassifier]
 compare_models(tweets, labels, models)
-

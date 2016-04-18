@@ -1,12 +1,19 @@
 from flask import Flask, request, render_template, redirect, url_for
-import ipdb, pickle, re
-
+import ipdb, re
+from model import Model
+import cPickle as pickle
 import pandas as pd
 import numpy as np
 from pymongo import MongoClient
 from cleaning_data import clean_tweet
-# Initialize your app and load your pickled models.
-#================================================
+
+
+
+
+model = pickle.load(open('models/model.pkl','rb'))
+
+
+
 client = MongoClient()
 db = client.tweets
 coll = db.thursdaytest
