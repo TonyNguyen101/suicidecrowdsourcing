@@ -24,9 +24,7 @@ class StdOutListener(StreamListener):
 
 	def on_data(self, data):
 		fhOut.write(data)
-
 		j=json.loads(data)
-
 		text=j["text"] #The text of the tweet
 		print(text) #Print it out
 		print('\n')

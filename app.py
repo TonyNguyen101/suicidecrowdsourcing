@@ -1,11 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for
-import random
-import ipdb
-import pickle
-import re
+import ipdb, pickle, re
+
 import pandas as pd
 import numpy as np
 from pymongo import MongoClient
+from cleaning_data import clean_tweet
 # Initialize your app and load your pickled models.
 #================================================
 client = MongoClient()
@@ -23,22 +22,19 @@ def return_tweet():
     '''return the text content tweet that we had
     indexed and also deletes it from the database'''
 
-    data = pd.read_pickle('data/tweetdata.pkl')
+    data = pd.read_pickle('data/thursday414_tweets.pkl')
     index = np.random.randint(1,len(data))
 
     '''needs to be fixed for items that aren't contained in axis'''
 
     target_data = data.iloc[index]
-    data = data.drop(index)
+    # data = data.drop(index)
 
     '''drop the data before sending it back'''
 
-    data.to_pickle('data/tweetdata.pkl')
+    # data.to_pickle('data/tweetdata.pkl')
     return target_data
 
-def filter_text(string):
-    '''removes any user mentions'''
-    return ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",string).split())
 # Homepage with form on it.
 #================================================
 @app.route('/')
@@ -52,7 +48,7 @@ def next():
         if request.method =='POST':
             tweet = return_tweet()
             text = tweet['text']
-            content = {'text':filter_text(text)}
+            content = {'text':clean_tweet(text)}
             return render_template('user_answer2.html', content=content)
         if request.method =='GET':
             return str(0)
@@ -65,7 +61,7 @@ def display_tweet():
     if request.method =='GET':
         tweet = return_tweet()
         text = tweet['text']
-        content = {'text': filter_text(text)}
+        content = {'text': clean_tweet(text)}
         return render_template('user_answer2.html', content=content)
     if request.method =='POST':
         return str(0)

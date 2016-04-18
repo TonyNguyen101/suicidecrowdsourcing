@@ -2,6 +2,7 @@ import pandas as pd
 import datetime
 import re
 
+
 def get_json_df(datafile):
     ''''fix trailing data...?'''
     with open(datafile, 'rb') as f:
@@ -11,14 +12,14 @@ def get_json_df(datafile):
     data_df = pd.read_json(data_json_str)
     return data_df
 
-
-def filter_tweets(string):
+def clean_tweet(string):
     '''remove any mentions'''
     new_string = ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",string).split())
     if new_string.startswith('RT') == True:
         return new_string[3::]
     else:
         return new_string
+
 
 def get_english_tweets(tweet_dataframe):
     langs = []
@@ -30,11 +31,16 @@ def get_english_tweets(tweet_dataframe):
 
 if __name__ == '__main__':
     df = get_json_df('test_tweets.json')
-    df = get_english_tweets(df)
-    df['text'] = df.text.apply(filter_tweets)
-    df2 = df[['id','user','text']]
+
+    #drop irrelevant columns
+    df = df[['id','user','text']]
+
+    df2 = get_english_tweets(df)
 
     '''make data set smaller so we can pass
     through to the FE in case DB's dont work'''
 
     df2.to_pickle('data/test2_tweets.pkl')
+
+    df2.to_json('data/test2_tweets.json',orient='records')
+    #use the json for a mongo import?
