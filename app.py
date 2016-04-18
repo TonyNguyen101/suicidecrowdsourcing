@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for
 import ipdb, re
-from model import Model
+# from model import Model
 import cPickle as pickle
 import pandas as pd
 import numpy as np
