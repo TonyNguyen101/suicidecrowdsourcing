@@ -8,11 +8,18 @@
     <script src="static/js/nv.d3.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    
     <!-- <script src="static/js/discreteBarChart.js"></script> -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <script src="static/js/donutChart.js"></script>
     <script src="static/js/histogram.js"></script>
-
+    
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='css/materialize.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <style>
         text {
@@ -20,33 +27,116 @@
         }
 
         svg {
-            display: block;
-            float: left;
+            /*display: block;*/
+            /*float: left;*/
+            /*height: 500px !important;*/
+            /*width: 500px !important;*/
+        }
+
+        #test3 {
             height: 700px !important;
             width: 700px !important;
         }
 
-        #test3 {
-            height: 750px !important;
-            width: 750px !important;
-        }
-
-        html, body, svg {
+        /*html, body, svg {
             margin: 0px;
             padding: 0px;
             height: 100%;
             width: 100%;
+        }*/
+        .textBlock {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: space-between;
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
 
+<nav class="light-blue lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#">WhereWeAre</a></li>
+    </ul>
 
-    <svg id="test3" class="mypiechart"></svg>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
+            <div class="col s3 card-panel textBlock">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache.</div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s3 card-panel">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
+            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
+            <div class="col s3 card-panel">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
+        </div>
+    </div>
+
+
+    
     <!-- <svg id="test4" class=''></svg> -->
   <!-- <div id="chart" class='with-3d-shadow with-transitions'>
       <svg></svg> -->
-  </div>
+  <!-- </div> -->
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Team </h5>
+          <p class="grey-text text-lighten-4">WhereWeAre identifies possible veteran suicidal tweets and profiles, uses crowd sourcing to further identify the serious threats to 1. collect quality data to further train a natural language processing model, 2. generate a heat map based on the user geolocation for further analysis, 3 use a twitter bot to follow and respond with an intervention tweet.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Team</h5>
+          <ul>
+            <li>Brian Woo</li>
+            <li>Lily Chai</li>
+            <li>Mia Hunsicker</li>
+            <li>Tony Nguyen</li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Title</h5>
+          <ul>
+            <li>Data Scientist</li>
+            <li>Data Scientist</li>
+            <li>Data Scientist</li>
+            <li>Product Manager/Developer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <!-- <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div> -->
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
+
+
+
 </body>
 </html>

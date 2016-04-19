@@ -5,26 +5,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-<title>WhereWeAre w/ Materialize</title>
-=======
 <title>Sentiment Analysis Crowdsourcing</title>
->>>>>>> b0684c699e8d4a4713eea8dcf590959286c98f81
 
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-
-          
-=======
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"> -->
 
 <link rel=stylesheet type=text/css href="{{url_for('static', filename='css/materialize.css') }}">
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
->>>>>>> b0684c699e8d4a4713eea8dcf590959286c98f81
+
 </head>
 
 <body>
@@ -52,15 +42,10 @@
   <div class="row">
     <div class="center-align">
       <div class="card-panel teal lighten-2"><h4>{{content.text}}</h4></div>
-<<<<<<< HEAD
-      <form action="/display_tweet" methods='POST'>
-        <button type="submit" class="waves-effect waves-light btn-large">Not Likely</button>
-        <button type="submit" class="waves-effect waves-light btn-large"> Likely</button>
-=======
+
       <form action="{{url_for('display_tweet')}}" methods='POST'>
         <button type="submit" name="submit" value="no" id="no" class="waves-effect waves-light btn-large">Not Likely</button>
         <button type="submit" name="submit" value="yes" id="yes" class="waves-effect waves-light btn-large"> Likely</button>
->>>>>>> b0684c699e8d4a4713eea8dcf590959286c98f81
       </form>
       <br>
       <form action="/stop" methods='POST'>
@@ -101,15 +86,10 @@
       </div>
     </div>
     <div class="footer-copyright">
-<<<<<<< HEAD
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-=======
+
       <!-- <div class="container">
       Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div> -->
->>>>>>> b0684c699e8d4a4713eea8dcf590959286c98f81
     </div>
   </footer>
 
