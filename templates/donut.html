@@ -22,9 +22,9 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <style>
-        text {
+        /*text {
             font: 10px sans-serif;
-        }
+        }*/
 
         svg {
             /*display: block;*/
@@ -33,7 +33,11 @@
             /*width: 500px !important;*/
         }
 
-        #test3 {
+/*        #test3 {
+            height: 700px !important;
+            width: 700px !important;
+        }*/
+        .mypiechart {
             height: 700px !important;
             width: 700px !important;
         }
@@ -44,12 +48,11 @@
             height: 100%;
             width: 100%;
         }*/
+        .row {
+            display: flex;
+        }
         .textBlock {
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            align-content: space-between;
+            display: flex;
             align-items: center;
         }
     </style>
@@ -70,21 +73,21 @@
   </div>
 </nav>
 
-
     <div class="container">
-        <div class="row">
-            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
-            <div class="col s3 card-panel textBlock">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache.</div>
+        <div class="row section">
+            <!-- <div class="col s12 m12 l9"><svg id="test3" class="mypiechart"></svg></div> -->
+            <div class="col s12 m12 l3 push-l1 textBlock">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
         </div>
         <div class="divider"></div>
-        <div class="row">
-            <div class="col s3 card-panel">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
-            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
+        <div class="row section">
+            <div class="col s12 m12 l3 textBlock">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus </div>
+            <div class="col pull-s12 m12 l8 push-l1"><svg id="test3" class="mypiechart"></svg></div>
         </div>
         <div class="divider"></div>
-        <div class="row">
-            <div class="col s8"><svg id="test3" class="mypiechart"></svg></div>
-            <div class="col s3 card-panel">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
+        <div class="row section">
+            <!-- <div class="col s12 m12 l8"><svg id="test3" class="mypiechart"></svg></div> -->
+            <div class="col s12 m12 l3 push-l1 textBlock">Beard artisan neutra, cupidatat elit pug ea distillery locavore salvia skateboard paleo actually kombucha. Etsy readymade food truck echo park. Selfies small batch vero, ugh gastropub sriracha retro YOLO cillum sartorial blue bottle ut fingerstache. Accusamus skateboard keffiyeh voluptate tattooed cillum mollit, brunch affogato twee excepteur locavore placeat delectus. Reprehenderit eu ennui, aute nisi YOLO bushwick street art butcher offal church-key squid veniam. Laborum literally irony, austin taxidermy laboris distillery kale chips kinfolk anim twee deserunt vice. Ullamco +1 beard, bespoke ex bicycle rights banh mi DIY mumblecore paleo nulla organic kale chips keffiyeh.</div>
+        </div>
         </div>
     </div>
 
@@ -123,9 +126,6 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <!-- <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div> -->
     </div>
   </footer>
 
@@ -134,8 +134,6 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="static/js/materialize.js"></script>
   <script src="static/js/init.js"></script>
-
-
 
 
 </body>
